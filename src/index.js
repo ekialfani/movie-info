@@ -1,10 +1,4 @@
-import './style/style.css';
+import main from './views/main.js';
 
-const firstName = 'eki';
-const lastName = 'alfani';
+document.addEventListener('DOMContentLoaded', main);
 
-const getName = (firstName, lastName) => {
-  console.log(`my name is: ${firstName} ${lastName}`);
-};
-
-getName(firstName, lastName);
