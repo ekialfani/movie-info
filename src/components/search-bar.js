@@ -1,3 +1,5 @@
+import '../styles/search-bar.css';
+
 class SearchBar extends HTMLElement {
   connectedCallback() {
     this.render();
