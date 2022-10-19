@@ -1,3 +1,5 @@
+import '../styles/menu-list.css';
+
 class MenuList extends HTMLElement {
   connectedCallback() {
   	this.render();

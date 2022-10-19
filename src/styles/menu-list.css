@@ -1,0 +1,15 @@
+menu-list ul {
+	display: flex;
+	list-style: none;
+}
+
+menu-list a {
+	font-weight: medium;
+	margin-right: 40px;
+	text-decoration: none;
+	color: #6B7280;
+}
+
+menu-list a:hover {
+	color: #4ADE80;
+}
