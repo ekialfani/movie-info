@@ -1,3 +1,5 @@
+import '../styles/app-logo.css';
+
 class AppLogo extends HTMLElement {
   connectedCallback() {
   	this.render();
