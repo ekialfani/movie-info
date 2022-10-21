@@ -1,3 +1,5 @@
+import '../styles/jumbotron.css';
+
 class MovieJumbotron extends HTMLElement {
 	set movie(movie){
 		this._movie = movie;
@@ -7,15 +9,16 @@ class MovieJumbotron extends HTMLElement {
 	render(){
 		this.innerHTML = (`
 			<div class="jumbotron">
-				<img src=${this._movie.backdrop} alt="${this._movie.title}">
+				<div class="hero">
+					<img src=${this._movie.backdrop}>
+				</div>
 				<div class="movie-info">
-					<h2>${this._movie.title}</h2>
-					<p>
+					<h2 class="title">${this._movie.title}</h2>
+					<p class="genre">
 						${this._movie.genres.map(genre => `<span>${genre}</span>`).join(' | ')}
 					</p>
-					<p>${this._movie.description}</p>
-					<h4>Release: ${this._movie.release}</h4>
-					<button class="detail-button">show details</button>
+					<p class="description">${this._movie.description}</p>
+					<input class="detail-button" type="button" value="show details">
 				</div>
 			</div>
 		`)
