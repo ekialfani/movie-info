@@ -2,6 +2,7 @@ import '../components/app-logo.js';
 import '../components/search-bar.js';
 import '../components/movie-jumbotron.js';
 import '../components/jumbotron-item.js';
+import '../components/now-playing.js';
 
 
 const main = () => {
@@ -50,13 +51,30 @@ const main = () => {
       "backdrop": "https://www.themoviedb.org/t/p/original/7lcwCb9DqQxffR5xdJZPOsxkxPL.jpg",
       "release_date": "2016-07-28",
       "vote_average": 5.49
+    },
+    {
+      "id": 328387,
+      "title": "Nerve",
+      "backdrop": "https://www.themoviedb.org/t/p/original/fg04CQyJzuDJ82jm2meY37n9XyE.jpg",
+      "release_date": "2016-07-27",
+      "vote_average": 6.84
+    },
+    {
+      "id": 376659,
+      "title": "Bad Moms",
+      "backdrop": "https://www.themoviedb.org/t/p/original/7lcwCb9DqQxffR5xdJZPOsxkxPL.jpg",
+      "release_date": "2016-07-28",
+      "vote_average": 5.49
     }
 
   ]
 
   const movieJumbotron = document.querySelector('movie-jumbotron');
+  const nowPlaying = document.querySelector('now-playing');
 
   movieJumbotron.movies = data;
+  nowPlaying.movies = data;
+
 };
 
 export default main;

@@ -1,0 +1,78 @@
+now-playing {
+	position: relative;
+	margin-top: 30px;
+}
+
+now-playing .cards {
+	display: grid;
+	grid-template-columns: repeat(4, 25%);
+	grid-auto-flow: column;
+	grid-auto-columns: 25%;
+	grid-template-rows: max-content;
+	list-style: none;
+	gap: 15px;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
+
+.cards::-webkit-scrollbar {
+	display: none;
+}
+
+.heading {
+	margin-bottom: 15px;
+	color: white;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+.buttons {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.buttons .next, .buttons .prev {
+	width: 40px;
+	height: 40px;
+	border-radius: 50px;
+	text-align: center;
+	border: none;
+	background-color: #16a34a;
+	color: white;
+	z-index: 99;
+	transition: .3s;
+}
+
+.next {
+	margin-right: -20px;
+}
+
+.next:hover, .prev:hover {
+	cursor: pointer;
+	background-color: #15803d;
+}
+
+.next:active , .prev:active{
+	background-color: #16a34a;
+}
+
+.show-button {
+	opacity: 1;
+}
+
+.hide-button {
+	opacity: 0;
+}
+
+.prev {
+	margin-left: -20px;
+}
+
+.buttons .bi {
+	font-size: 1.8em;
+	font-weight: bold;
+}

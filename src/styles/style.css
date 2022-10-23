@@ -24,3 +24,7 @@ main {
 	grid-template-columns: 30% 70%;
 }
 
+content {
+	display: grid;
+	grid-row-gap: 30px;
+}
