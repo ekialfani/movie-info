@@ -1,0 +1,14 @@
+movie-jumbotron {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: max-content;
+	grid-auto-flow: column;
+	grid-auto-columns: 100%;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	scrollbar-width:  none;
+}
+
+movie-jumbotron::-webkit-scrollbar {
+	display: none;
+}
