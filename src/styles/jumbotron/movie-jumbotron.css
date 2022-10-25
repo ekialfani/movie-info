@@ -1,4 +1,4 @@
-movie-jumbotron {
+.jumbotron {
 	display: grid;
 	grid-template-columns: 100%;
 	grid-template-rows: max-content;
@@ -9,6 +9,10 @@ movie-jumbotron {
 	scrollbar-width:  none;
 }
 
-movie-jumbotron::-webkit-scrollbar {
+.jumbotron::-webkit-scrollbar {
 	display: none;
+}
+
+.jumbotron .error {
+	color: white;
 }

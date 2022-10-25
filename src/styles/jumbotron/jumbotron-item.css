@@ -11,7 +11,7 @@ jumbotron-item::after {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: linear-gradient(to right, black, transparent);
+	background: linear-gradient(to right, black, rgba(0, 0, 0, 0.2));
 	z-index: -1;
 }
 
@@ -28,14 +28,7 @@ jumbotron-item .info {
 }
 
 .info .title {
-	/*font-family: 'Teko', sans-serif;*/
-	/*font-family: 'Kanit', sans-serif;*/
-	/*font-family: 'Comfortaa', cursive;*/
-	/*font-family: 'Exo 2', sans-serif;*/
-	/*font-family: 'Gugi', cursive;*/
-	/*font-family: 'Play', sans-serif;*/
 	font-family: 'Russo One', sans-serif;
-	/*font-family: 'Zen Dots', cursive;*/
 	text-transform: capitalize;
 	text-transform: uppercase;
 	font-weight: 500;
@@ -50,18 +43,10 @@ jumbotron-item .info {
 	color: #ddd;
 }
 
-.info .rating {
-	width: max-content;
+.info .rating .bi {
 	font-size: 14px;
-	margin-top: 10px;
-	background: orange;
-	background-clip: text;
-	-webkit-background-clip: text;
-}
-
-.rating .bi {
 	margin-right: 5px;
-	color: transparent;
+	color: orange;
 }
 
 .detail-button {

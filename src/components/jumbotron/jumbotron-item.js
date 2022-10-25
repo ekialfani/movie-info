@@ -18,7 +18,7 @@ class JumbotronItem extends HTMLElement {
 	render(){
 		this.innerHTML = (`
 			<div>
-				<img src=${this._movie.backdrop} alt=${this._movie.title}>
+				<img src="https://www.themoviedb.org/t/p/w500/${this._movie.backdrop_path}" alt=${this._movie.title}>
 				<div class="info">
 					<h2 class="title">${this._movie.title}</h2>
 					<p class="release">${this._movie.release_date}</p>

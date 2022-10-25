@@ -183,5 +183,6 @@ card-item span:active {
 }
 
 .rating .bi {
+	margin-right: 5px;
 	color: orange;
 }
