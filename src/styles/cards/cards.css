@@ -133,7 +133,12 @@ card-item span:active {
 	line-height: 1.6;
 }
 
+.card-info .title {
+	line-height: 1.2;
+}
+
 .card-info .release {
+	margin-top: 5px;
 	color: #ddd;
 }
 

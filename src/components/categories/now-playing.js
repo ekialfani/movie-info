@@ -1,9 +1,20 @@
 import '../../styles/categories/now-playing.css';
 import data from '../../data/data.js';
+import DataSource from '../../data/data-source.js';
 
 class NowPlaying extends HTMLElement {
-	connectedCallback(){
-		this.render(data);
+	async connectedCallback(){
+		try {
+			const result = await DataSource.getMovieByCategories('now_playing');
+			this.render(result);
+
+		}catch(error){
+			this.error(error);
+		}
+	}
+
+	error(message){
+		this.innerHTML = `<p class="error">${message}</p>`;
 	}
 
 	render(movieData){

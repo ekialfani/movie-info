@@ -21,7 +21,7 @@ class CardItem extends HTMLElement {
 	render(){
 		this.innerHTML = (`
 			<div>
-				<img src=${this._movie.backdrop}>
+				<img src="https://www.themoviedb.org/t/p/w500/${this._movie.backdrop_path}">
 				<div class="card-info">
 					<h4 class="title">${this._movie.title}</h4>
 					<p class="release">${this._movie.release_date}</p>

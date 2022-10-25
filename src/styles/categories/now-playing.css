@@ -7,3 +7,7 @@ now-playing h3 {
 	color: white;
 	font-weight: 500;
 }
+
+now-playing .error {
+	color: white;
+}
