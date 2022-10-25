@@ -1,0 +1,9 @@
+now-playing h3 {
+	font-size: 1em;
+	letter-spacing: 1px;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	text-transform: capitalize;
+	color: white;
+	font-weight: 500;
+}
