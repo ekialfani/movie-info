@@ -1,4 +1,4 @@
-import '../styles/movie-jumbotron.css';
+import '../../styles/jumbotron/movie-jumbotron.css';
 import './jumbotron-item.js';
 
 class MovieJumbotron extends HTMLElement {
@@ -15,7 +15,7 @@ class MovieJumbotron extends HTMLElement {
 			return this.scrollLeft -= this.scrollWidth;
 		}
 
-		this.scrollLeft += this.children[0].scrollWidth;
+		this.scrollLeft += this.children[0].scrollWidth + 1;
 	}
 
 	set movies(movies){

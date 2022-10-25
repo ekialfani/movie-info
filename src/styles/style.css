@@ -9,22 +9,40 @@
 body {
 	font-family: 'Inter', sans-serif;
 	background-color: #191a1f;
-	padding-left: 5%;
-	padding-right: 5%;
+	padding-left: 3%;
+	padding-right: 3%;
 }
 
 header {
 	display: grid;
-	grid-template-columns: 30% 70%;
+	grid-template-columns: 25% 75%;
 	align-items: center;
+}
+
+search-bar {
+	border-left: 1px solid #333;
 }
 
 main {
 	display: grid;
-	grid-template-columns: 30% 70%;
+	grid-template-columns: 25% 75%;
 }
 
-content {
+#content {
 	display: grid;
 	grid-row-gap: 30px;
+	padding-bottom: 40px;
+	border-left: 1px solid #333;
+	padding-left: 30px;
+}
+
+.now-playing {
+	margin-top: 20px;
+}
+
+.heading {
+	margin-bottom: 10px;
+	color: white;
+	text-transform: capitalize;
+	font-weight: 500;
 }

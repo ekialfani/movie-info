@@ -1,4 +1,4 @@
-import '../styles/app-logo.css';
+import '../../styles/app-bar/app-logo.css';
 
 class AppLogo extends HTMLElement {
   connectedCallback() {

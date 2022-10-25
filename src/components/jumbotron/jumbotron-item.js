@@ -1,4 +1,4 @@
-import '../styles/jumbotron-item.css';
+import '../../styles/jumbotron/jumbotron-item.css';
 
 class JumbotronItem extends HTMLElement {
 	set movie(movie){

@@ -1,8 +1,8 @@
-import '../components/app-logo.js';
-import '../components/search-bar.js';
-import '../components/movie-jumbotron.js';
-import '../components/jumbotron-item.js';
-import '../components/now-playing.js';
+import '../components/app-bar/app-logo.js';
+import '../components/app-bar/search-bar.js';
+import '../components/jumbotron/movie-jumbotron.js';
+import '../components/jumbotron/jumbotron-item.js';
+import '../components/cards/movie-cards.js';
 
 
 const main = () => {
@@ -69,13 +69,23 @@ const main = () => {
 
   ]
 
-  const movieJumbotron = document.querySelector('movie-jumbotron');
-  const nowPlaying = document.querySelector('now-playing');
 
+  const movieJumbotron = document.querySelector('movie-jumbotron');
   movieJumbotron.movies = data;
-  nowPlaying.movies = data;
+
+  nowPlaying(data);
 
 };
+
+function nowPlaying(data){
+  const parent = document.querySelector('.now-playing');
+  const cards = document.createElement('movie-cards');
+
+  cards.movies = data;
+  cards.className = 'small-cards';
+
+  parent.append(cards);
+}
 
 export default main;
 

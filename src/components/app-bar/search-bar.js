@@ -1,4 +1,4 @@
-import '../styles/search-bar.css';
+import '../../styles/app-bar/search-bar.css';
 
 class SearchBar extends HTMLElement {
   connectedCallback() {

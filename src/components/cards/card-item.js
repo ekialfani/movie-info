@@ -1,5 +1,3 @@
-import '../styles/card-item.css';
-
 class CardItem extends HTMLElement {
 	set movie(movie){
 		this.id = movie.id;
@@ -22,7 +20,7 @@ class CardItem extends HTMLElement {
 
 	render(){
 		this.innerHTML = (`
-			<li>
+			<div>
 				<img src=${this._movie.backdrop}>
 				<div class="card-info">
 					<h4 class="title">${this._movie.title}</h4>
@@ -30,7 +28,7 @@ class CardItem extends HTMLElement {
 					<div class="rating"></div>
 				</div>
 				<span></span>
-			</li>
+			</div>
 		`)
 
 		const rating = Math.round(this._movie.vote_average  / 2);
