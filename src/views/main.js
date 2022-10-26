@@ -3,6 +3,7 @@ import '../components/jumbotron/movie-jumbotron.js';
 import '../components/cards/movie-cards.js';
 import '../components/categories/now-playing.js';
 import '../components/categories/top-rate.js';
+import '../components/categories/up-coming.js';
 
 
 const main = () => {

@@ -15,11 +15,13 @@ movie-cards {
 }
 
 .sidebar-cards .card-list {
-	grid-template-columns: 100%;
-	grid-template-rows: repeat(3, max-content);
-	grid-auto-flow: row;
+	grid-template-rows: repeat(4, max-content);
 	grid-auto-rows: max-content;
 	grid-row-gap: 30px;
+}
+
+.sidebar-cards .buttons {
+	display: none;
 }
 
 .small-cards .card-list {

@@ -9,8 +9,6 @@
 body {
 	font-family: 'Poppins', sans-serif;
 	background-color: #191a1f;
-	padding-left: 3%;
-	padding-right: 3%;
 }
 
 header {
@@ -21,6 +19,7 @@ header {
 
 search-bar {
 	border-left: 1px solid #333;
+	padding-left: 2%;
 }
 
 main {
@@ -28,12 +27,27 @@ main {
 	grid-template-columns: 25% 75%;
 }
 
+aside {
+	padding-left: 8%;
+	padding-right: 8%;
+}
+
+aside::-webkit-scrollbar {
+	display: none;
+}
+
 #content {
 	display: grid;
 	grid-row-gap: 30px;
+	align-content: start;
 	padding-bottom: 40px;
 	border-left: 1px solid #333;
-	padding-left: 30px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+#content::-webkit-scrollbar {
+	display: none;
 }
 
 .now-playing {
