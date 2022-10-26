@@ -1,3 +1,4 @@
+import '../../styles/categories/up-coming.css';
 import '../cards/movie-cards.js';
 import DataSource from '../../data/data-source.js';
 
