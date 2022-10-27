@@ -1,5 +1,4 @@
 import '../../styles/categories/now-playing.css';
-import data from '../../data/data.js';
 import DataSource from '../../data/data-source.js';
 
 class NowPlaying extends HTMLElement {

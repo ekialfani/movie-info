@@ -20,7 +20,13 @@ movie-cards {
 	grid-row-gap: 30px;
 }
 
-.sidebar-cards .buttons {
+.search-cards .card-list {
+	grid-template-columns: repeat(auto-fit, 23.65%);
+	grid-template-rows: max-content;
+	grid-gap: 30px 15px;
+}
+
+.sidebar-cards .buttons, .search-cards .buttons {
 	display: none;
 }
 
@@ -181,6 +187,22 @@ card-item span:active {
 }
 
 .sidebar-cards .rating {
+	font-size: .8em;
+}
+
+.search-cards .card-info {
+	padding: 50px 20px 10px;
+}
+
+.search-cards .title {
+	font-size: .9em;
+}
+
+.search-cards .release {
+	font-size: .8em;
+}
+
+.search-cards .rating {
 	font-size: .8em;
 }
 
