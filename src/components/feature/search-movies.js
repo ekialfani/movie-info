@@ -1,3 +1,4 @@
+import '../../styles/feature/search-movies.css';
 import '../cards/movie-cards.js';
 
 class SearchMovies extends HTMLElement {
