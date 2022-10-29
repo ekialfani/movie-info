@@ -28,14 +28,10 @@ main {
 }
 
 aside {
-	height: 100vh;
-	overflow: auto;
-	padding-left: 8%;
-	padding-right: 8%;
-}
-
-aside::-webkit-scrollbar {
-	display: none;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 635px 1fr;
+	grid-gap: 20px;
 }
 
 #content {

@@ -33,14 +33,12 @@ class MovieCards extends HTMLElement {
 	render(){
 		this.innerHTML = (`
 			<div>
-				<div class="buttons">
-					<button class="prev-button">
-						<i class="bi bi-chevron-left"></i>
-					</button>
-					<button class="next-button">
-						<i class="bi bi-chevron-right"></i>
-					</button>
-				</div>
+				<button class="prev-button">
+					<i class="bi bi-chevron-left"></i>
+				</button>
+				<button class="next-button">
+					<i class="bi bi-chevron-right"></i>
+				</button>
 
 				<div class="card-list"></div>
 			</div>

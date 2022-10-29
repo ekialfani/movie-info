@@ -34,20 +34,25 @@ class CardItem extends HTMLElement {
 		this.activeCard();
 	}
 
+	dateConvert(date){
+		return new Date(date).getFullYear();
+	}
+
 	render(){
+		const { backdrop_path, title, release_date, vote_average } = this._movie;
 		this.innerHTML = (`
 			<div>
-				<img src="https://www.themoviedb.org/t/p/w500/${this._movie.backdrop_path}">
+				<img src="https://www.themoviedb.org/t/p/w500/${backdrop_path}">
 				<div class="card-info">
-					<h4 class="title">${this._movie.title}</h4>
-					<p class="release">${this._movie.release_date}</p>
+					<h4 class="title">${title}</h4>
+					<p class="release">(${this.dateConvert(release_date)})</p>
 					<div class="rating"></div>
 				</div>
 				<span></span>
 			</div>
 		`)
 
-		const rating = Math.round(this._movie.vote_average  / 2);
+		const rating = Math.round(vote_average  / 2);
 
 		for(let i = 1; i <= 5; i++){
 			const starIcon = document.createElement('i');
