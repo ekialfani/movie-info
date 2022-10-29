@@ -23,10 +23,13 @@ class CardItem extends HTMLElement {
 			const result = await DataSource.getDetails(this.id);
 
 			movieDetails.movie = result;
+			movieDetails.classList.add('show-details');
 
 		}catch(error){
 			movieDetails.errorMessage = error;
 		}
+
+        document.body.style.overflow = 'hidden';
 		
 		this.activeCard();
 	}
