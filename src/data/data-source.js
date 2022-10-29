@@ -41,5 +41,17 @@ export default class DataSource {
 		})
 		.then(response => response.results);
 	}
+
+	static getDetails(movieId){
+		return fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=375ce906f49de003c1a2474b933cbca4&language=en-US`)
+		.then(response => {
+			if(!response.ok){
+				return Promise.reject('error: something went wrong!');
+			}
+
+			return response.json();
+		})
+		.then(response => response);
+	}
 }
 

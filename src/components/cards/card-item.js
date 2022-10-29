@@ -1,3 +1,6 @@
+import '../features/movie-details.js';
+import DataSource from '../../data/data-source.js';
+
 class CardItem extends HTMLElement {
 	set movie(movie){
 		this.id = movie.id;
@@ -13,8 +16,18 @@ class CardItem extends HTMLElement {
 		this.querySelector('span').classList.add('active');
 	}
 
-	getMovieDetail(){
-		console.log(this.id);
+	async showMovieDetails(){
+		const movieDetails = document.querySelector('movie-details');
+
+		try {
+			const result = await DataSource.getDetails(this.id);
+
+			movieDetails.movie = result;
+
+		}catch(error){
+			movieDetails.errorMessage = error;
+		}
+		
 		this.activeCard();
 	}
 
@@ -46,7 +59,7 @@ class CardItem extends HTMLElement {
 			this.querySelector('.rating').append(starIcon);
 		}
 
-		this.addEventListener('click', this.getMovieDetail);
+		this.addEventListener('click', this.showMovieDetails);
 	}
 }
 

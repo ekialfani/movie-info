@@ -1,7 +1,7 @@
 import '../components/app-bar/search-bar.js';
 import '../components/categories/now-playing.js';
 import '../components/categories/top-rate.js';
-import '../components/feature/search-movies.js';
+import '../components/features/search-movies.js';
 import DataSource from '../data/data-source.js';
 
 
