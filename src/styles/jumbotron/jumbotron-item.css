@@ -29,7 +29,6 @@ jumbotron-item .info {
 
 .info .title {
 	font-family: 'Russo One', sans-serif;
-	text-transform: capitalize;
 	text-transform: uppercase;
 	font-weight: 500;
 	font-size: 3em;
@@ -44,7 +43,7 @@ jumbotron-item .info {
 }
 
 .info .rating .bi {
-	font-size: 14px;
+	font-size: 1em;
 	margin-right: 5px;
 	color: orange;
 }

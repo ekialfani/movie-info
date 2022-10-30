@@ -14,12 +14,26 @@ movie-cards {
 	display: none;
 }
 
+.sidebar-cards > div {
+	height: 80vmin;
+	padding: 0 8% 50px;
+	overflow-y: auto;
+}
+
+.sidebar-cards > div::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+
+.sidebar-cards:hover > div::-webkit-scrollbar-thumb {
+	background: #16a34a;
+}
+
+.sidebar-cards > div::-webkit-scrollbar-track {
+	background: transparent;
+	box-shadow: none;
+}
+
 .sidebar-cards .card-list {
-	width: 100%;
-	height: 768px;
-	background-color: orange;
-	padding-left: 8%;
-	padding-right: 8%;
 	grid-template-rows: repeat(20, max-content);
 	grid-row-gap: 30px;
 }
@@ -32,6 +46,10 @@ movie-cards {
 	grid-template-columns: repeat(auto-fit, 23.65%);
 	grid-template-rows: max-content;
 	grid-gap: 30px 15px;
+}
+
+.search-cards button {
+	display: none;
 }
 
 .small-cards .card-list {
@@ -76,12 +94,14 @@ movie-cards {
 	right: -20px;
 }
 
-.next-button .bi:hover , .prev-button .bi:hover {
+.next-button .bi:hover,
+.prev-button .bi:hover {
 	background-color: #15803d;
 	cursor: pointer;
 }
 
-.next-button .bi:active, .prev-button .bi:active {
+.next-button .bi:active,
+.prev-button .bi:active {
 	background-color: #16a34a;
 }
 
