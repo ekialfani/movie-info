@@ -16,7 +16,7 @@ movie-cards {
 
 .sidebar-cards > div {
 	height: 80vmin;
-	padding: 0 8% 50px;
+	padding: 0 8% 20px;
 	overflow-y: auto;
 }
 
