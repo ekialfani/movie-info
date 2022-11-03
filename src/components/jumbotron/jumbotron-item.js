@@ -21,7 +21,7 @@ class JumbotronItem extends HTMLElement {
       const result = await DataSource.getDetails(this.id);
       movieDetails.movie = result;
       movieDetails.classList.add('show-details');
-      clearInterval(this.parentElement.parentElement.interval);
+      clearInterval(this.parentElement.interval);
       document.body.style.overflow = 'hidden';
 
     }catch(error) {
@@ -43,7 +43,7 @@ class JumbotronItem extends HTMLElement {
 					<h2 class="title">${title}</h2>
 					<p class="release">(${this.dateConvert(release_date)})</p>
 						<div class="rating"></div>
-					<button type="submit" class="detail-button">show detals</button>
+					<button type="submit" class="detail-button">show details</button>
 				</div>
 			</div>
 		`);

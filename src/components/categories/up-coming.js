@@ -13,7 +13,11 @@ class UpComing extends HTMLElement {
   }
 
   error(message) {
-    this.innerHTML = `<p class="error">${message}</p>`;
+    this.innerHTML = (`
+      <div>
+        <p class="error">${message}</p>
+      </div>
+    `);
   }
 
   render(movieData) {
@@ -27,6 +31,8 @@ class UpComing extends HTMLElement {
     const movieCards = document.createElement('movie-cards');
     movieCards.className = 'sidebar-cards';
     movieCards.movies = movieData;
+
+    console.log(window.pageYOffset);
     
     this.querySelector('.cards').append(movieCards);
   }

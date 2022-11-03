@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Russo+One&family=Signika+Negative:wght@400;500;600&family=Stick+No+Bills:wght@400;500;600&display=swap');
 
 * {
 	margin: 0;
@@ -17,11 +17,6 @@ header {
 	align-items: center;
 }
 
-search-bar {
-	border-left: 1px solid #27272a;
-	padding-left: 2%;
-}
-
 main {
 	display: grid;
 	grid-template-columns: 25% 75%;
@@ -29,9 +24,8 @@ main {
 
 aside {
 	display: grid;
-	grid-template-rows: repeat(2, max-content);
+	grid-template-rows: max-content 1fr;
 	justify-items: space-between;
-	/*row-gap: 20px;*/
 }
 
 #content {
@@ -65,7 +59,7 @@ aside {
 	padding: 8%;
 	/*border-top: 1px solid #333;*/
 	background-color: #27272a;
-	margin-bottom: 0;
+	margin-bottom: -20px;
 }
 
 .credits a {
@@ -90,4 +84,47 @@ aside {
 	text-align: center;
 	color: #888;
 	font-size: .9em;
+}
+
+@media screen and (max-width: 992px){
+	header {
+		grid-template-columns: 100%;
+	}
+
+	aside {
+		order: 2;
+	}
+
+	main {
+		grid-template-columns: 100%;
+		order: 1;
+	}
+}
+
+@media screen and (max-width: 768px){
+	aside {
+		grid-row-gap: 20px;
+	}
+
+	#content {
+		padding: 0;
+	}
+
+	.credits {
+		padding: 30px 20px;
+		text-align: center;
+	}
+
+	.credits h4 {
+		margin-bottom: 20px;
+		font-size: 0.8em;
+	}
+
+	.credits img {
+		width: 100px;
+	}
+
+	.credits figcaption {
+		font-size: 0.7em;
+	}
 }

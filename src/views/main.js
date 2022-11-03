@@ -5,6 +5,19 @@ import '../components/features/search-movies.js';
 import DataSource from '../data/data-source.js';
 
 
+const updateUpcomingStyle = (height, display) => {
+  const sidebarCards = document.querySelector('.sidebar-cards div');
+  const upcoming = document.querySelector('up-coming');
+
+  if(window.screen.width > 992){
+    sidebarCards.style.height = height;
+  }else {
+    sidebarCards.style.height = 'max-content';
+    upcoming.style.display = display;
+  }
+
+}
+
 const renderCategories = () => {
   const movieList = document.querySelector('.movie-list');
   const nowPlaying = document.createElement('now-playing');
@@ -46,23 +59,20 @@ const main = () => {
       return input;
     }).join('');
 
-    const sidebarCard = document.querySelector('.sidebar-cards div');
-
-    try {
-      if (keyword !== '') {
+    if(keyword.length === 0){
+      updateUpcomingStyle('70vmin', 'inline-block');
+        renderCategories();
+    }else {
+      try {
         const result = await DataSource.searchMovies(keyword);
 
         renderSearchResult(result);
-        
-        sidebarCard.style.height = '80vmax';
-        
-      } else {
-        renderCategories();
-        sidebarCard.style.height = '80vmin';
+        updateUpcomingStyle('80vmax', 'none');
+      
+      } catch (error) {
+        renderFallbackResult(error);
+        updateUpcomingStyle('70vmin', 'none');
       }
-    } catch (error) {
-      renderFallbackResult(error);
-      sidebarCard.style.height = '80vmin';
     }
   };
 

@@ -14,13 +14,22 @@ class SearchBar extends HTMLElement {
     return this.querySelector('.search-input').value;
   }
 
+  searchButtonClicked = () => {
+    this.querySelector('.search-input').classList.toggle('show-search-input');
+  }
+
   render() {
     this.innerHTML = (`
       <div class="search-bar">
         <input class="search-input" type="search" placeholder="search movies..">
+        <div class="search-button">
+          <i class="bi bi-search"></i>
+        </div>
       </div>`);
 
     this.addEventListener('input', this._inputEvent);
+
+    this.querySelector('.search-button').addEventListener('click', this.searchButtonClicked);
   }
 }
 

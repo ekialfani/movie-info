@@ -13,7 +13,11 @@ class SearchMovies extends HTMLElement {
   }
 
   error() {
-    this.innerHTML = `<p>${this._message}</p>`;
+    this.innerHTML = (`
+      <div>
+        <p class="error">${this._message}</p>
+      </div>
+    `);
   }
 
   render() {

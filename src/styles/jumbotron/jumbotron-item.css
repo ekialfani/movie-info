@@ -1,6 +1,6 @@
 jumbotron-item {
 	position: relative;
-	border-radius: 20px;
+	/*border-radius: 20px;*/
 	overflow: hidden;
 }
 
@@ -11,7 +11,8 @@ jumbotron-item::after {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: linear-gradient(to right, black, rgba(0, 0, 0, 0.2));
+	/*background: linear-gradient(to right, black, rgba(0, 0, 0, 0.2));*/
+	background: radial-gradient(circle, rgba(0,0,0,0.3), black);
 	z-index: -1;
 }
 
@@ -24,14 +25,16 @@ jumbotron-item img {
 }
 
 jumbotron-item .info {
-	padding: 50px 50px 30px;
+	padding: 60px 5% 40px;
+	line-height: 2;
 }
 
 .info .title {
 	font-family: 'Russo One', sans-serif;
 	text-transform: uppercase;
 	font-weight: 500;
-	font-size: 3em;
+	font-size: 4.5em;
+	line-height: 1.2;
 	background: linear-gradient(to top, #dadada 25%, white);
 	color: transparent;
 	-webkit-background-clip: text;
@@ -39,18 +42,21 @@ jumbotron-item .info {
 }
 
 .info .release {
+	font-size: 1.5em;
+	letter-spacing: 1px;
 	color: #ddd;
 }
 
 .info .rating .bi {
-	font-size: 1em;
-	margin-right: 5px;
+	font-size: 1.5em;
+	margin-right: 8px;
 	color: orange;
 }
 
 .detail-button {
 	margin-top: 20px;
-	padding: 12px 25px;
+	font-size: 1.2em;
+	padding: 18px 30px;
 	text-transform: capitalize;
 	font-weight: bold;	
 	border: none;
@@ -66,4 +72,82 @@ jumbotron-item .info {
 
 .detail-button:active {
 	background-color: #16a34a;
+}
+
+@media screen and (max-width: 1440px){
+	jumbotron-item .info {
+		padding: 50px 5% 30px;
+		line-height: 1.8em;
+	}
+
+	.info .title {
+		font-size: 3.3em;
+	}
+
+	.info .release {
+		font-size: 1em;
+	}
+
+	.info .rating .bi {
+		margin-right: 5px;
+		font-size: 1em;
+	}
+
+	.detail-button {
+		font-size: .9em;
+		padding: 14px 25px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.info .title {
+		font-size: 2.5em;
+	}
+
+	.detail-button {
+		padding: 12px 20px;
+	}
+
+	.info .release {
+		font-size: 0.9em;
+	}
+
+	.info .rating .bi {
+		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width: 576px){
+	jumbotron-item .info {
+		padding: 40px 20px 20px;
+		line-height: 1.5em;
+	}
+
+	.info .title {
+		font-size: 1.5em;
+	}
+
+	.info .release {
+		font-size: 0.8em;
+	}
+
+	.info .rating .bi {
+		font-size: 0.8em;
+	}
+
+	.detail-button {
+		background-color: transparent;
+		font-size: 0;
+		border-radius: 0;
+		position: absolute;
+		top: -20px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	.detail-button:hover {
+		background-color: transparent;
+		font-size: 0;
+	}
 }

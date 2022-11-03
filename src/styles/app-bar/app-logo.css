@@ -1,4 +1,52 @@
-app-logo h1 {
+app-logo > div {
+	padding: 20px 8%;
+	display: flex;
+	align-items: center;
+}
+
+app-logo .logo {
+	font-family: 'Stick No Bills', sans-serif;
 	color: white;
-	padding-left: 8%;
+	font-size: 3em;
+	font-weight: bold;
+	color: #16a34a;
+}
+
+app-logo .logo-text {
+	font-family: 'Signika Negative', sans-serif;
+	margin-left: 5px;
+	font-size: 2em;
+	color: white;
+}
+
+@media screen and (max-width: 1440px){
+	app-logo .logo {
+		font-size: 2.5em;
+	}
+
+	app-logo .logo-text {
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (max-width: 992px){
+	app-logo > div {
+		padding: 20px 5% 0;
+	}
+}
+
+@media screen and (max-width: 768px){
+	app-logo > div {
+		padding: 20px 20px 0;
+	}
+}
+
+@media screen and (max-width: 576px){
+	app-logo .logo {
+		font-size: 2em;
+	}
+
+	app-logo .logo-text {
+		font-size: 1em;
+	}
 }

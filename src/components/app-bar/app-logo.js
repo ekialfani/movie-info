@@ -6,7 +6,12 @@ class AppLogo extends HTMLElement {
   }
 
   render() {
-  	this.innerHTML = `<h1>Movie Info</h1>`;
+  	this.innerHTML = (`
+      <div>
+        <span class="logo">M</span>
+        <span class="logo-text">movie info</span>
+      </div>
+    `);
   }
 }
 

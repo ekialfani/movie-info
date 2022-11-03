@@ -1,4 +1,5 @@
-.jumbotron {
+movie-jumbotron {
+	border-radius: 20px;
 	display: grid;
 	grid-template-columns: 100%;
 	grid-template-rows: max-content;
@@ -9,10 +10,21 @@
 	scrollbar-width:  none;
 }
 
-.jumbotron::-webkit-scrollbar {
+movie-jumbotron::-webkit-scrollbar {
 	display: none;
 }
 
-.error {
-	color: white;
+@media screen and (max-width: 768px){
+	movie-jumbotron {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
+
+@media screen and (max-width: 576px){
+	movie-jumbotron {
+		margin-left: 15px;
+		margin-right: 15px;
+		border-radius: 10px;
+	}
 }

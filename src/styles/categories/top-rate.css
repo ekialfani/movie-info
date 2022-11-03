@@ -6,3 +6,25 @@ top-rate h3 {
 	color: white;
 	font-size: 1em;
 }
+
+@media screen and (max-width: 768px){
+	top-rate h3 {
+		margin-left: 20px;
+	}
+
+	top-rate .cards {
+		width: 100vw;
+		padding: 0 20px;
+	}
+}
+
+@media screen and (max-width: 576px){
+	top-rate h3 {
+		font-size: 0.8em;
+		margin-left: 15px;
+	}
+
+	top-rate .cards {
+		padding: 0 15px;
+	}
+}

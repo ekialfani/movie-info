@@ -11,3 +11,26 @@ now-playing h3 {
 now-playing .error {
 	color: white;
 }
+
+@media screen and (max-width: 768px){
+	now-playing h3 {
+		margin-left: 20px;
+	}
+
+	now-playing .cards {
+		width: 100vw;
+		padding: 0 20px;
+	}
+}
+
+@media screen and (max-width: 576px){
+	now-playing h3 {
+		font-size: 0.8em;
+		margin-top: 0;
+		margin-left: 15px;
+	}
+
+	now-playing .cards {
+		padding: 0 15px;
+	}
+}

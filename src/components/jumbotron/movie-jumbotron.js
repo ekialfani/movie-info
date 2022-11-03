@@ -4,12 +4,8 @@ import DataSource from '../../data/data-source.js';
 
 class MovieJumbotron extends HTMLElement {
   async connectedCallback() {
-    try {
-      const result = await DataSource.getTrendingMovies();
-      this.render(result);
-    } catch (error) {
-      this.error(error);
-    }
+    const result = await DataSource.getTrendingMovies();
+    this.render(result);
 
     this.interval = setInterval(() => this.nextScroll(), 3000);
   }
@@ -23,27 +19,19 @@ class MovieJumbotron extends HTMLElement {
   }
 
   nextScroll() {
-    const jumbotron = this.querySelector('.jumbotron');
-
-    if (jumbotron.scrollLeft >= (jumbotron.scrollWidth - jumbotron.children[0].scrollWidth)) {
-      return jumbotron.scrollLeft -= jumbotron.scrollWidth;
+    if (this.scrollLeft >= (this.scrollWidth - this.children[0].scrollWidth)) {
+      return this.scrollLeft -= this.scrollWidth;
     }
 
-    jumbotron.scrollLeft += jumbotron.children[0].scrollWidth;
-  }
-
-  error(message) {
-    this.innerHTML = `<p class="error">${message}</p>`;
+    this.scrollLeft += this.children[0].scrollWidth + 1;
   }
 
   render(movieData) {
-    this.innerHTML = `<div class="jumbotron"></div>`;
-
     movieData.forEach((movie) => {
       const JumbotronItem = document.createElement('jumbotron-item');
       JumbotronItem.movie = movie;
 
-      this.querySelector('.jumbotron').append(JumbotronItem);
+      this.append(JumbotronItem);
     });
   }
 }
