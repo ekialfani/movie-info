@@ -57,17 +57,21 @@ class AppLogo extends HTMLElement {
       
       @media screen and (max-width: 992px){
         div {
-          padding: 20px 5% 0;
+          margin-left: 8%;
         }
       }
       
       @media screen and (max-width: 768px){
         div {
-          padding: 20px 20px 0;
+          margin-left: 0;
         }
       }
       
       @media screen and (max-width: 576px){
+        div {
+          margin-left: 10px;
+        }
+
         .logo {
           font-size: 2em;
         }

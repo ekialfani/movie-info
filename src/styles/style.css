@@ -88,7 +88,7 @@ aside {
 
 @media screen and (max-width: 992px){
 	header {
-		grid-template-columns: 100%;
+		grid-template-columns: 30% 70%;
 	}
 
 	aside {
@@ -126,5 +126,11 @@ aside {
 
 	.credits figcaption {
 		font-size: 0.7em;
+	}
+}
+
+@media screen and (max-width: 576px){
+	header {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
