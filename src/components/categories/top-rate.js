@@ -9,8 +9,16 @@ class TopRate extends HTMLElement {
       const result = await DataSource.getMovieByCategories('top_rated');
       this.render(result);
     } catch (error) {
-      console.log(error);
+      this.error(error);
     }
+  }
+
+  error(message){
+    this.innerHTML = (`
+      <div>
+        <p class="error">${message}</p>
+      </div>
+    `)
   }
 
   render(movieData) {

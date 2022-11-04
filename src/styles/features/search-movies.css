@@ -9,6 +9,14 @@ search-movies h3 {
 
 search-movies .error {
 	color: white;
+	margin: 8%;
+	text-transform: capitalize;
+}
+
+@media screen and (max-width: 992px){
+	search-movies .error {
+		margin: 5%;
+	}
 }
 
 @media screen and (max-width: 768px){
@@ -23,6 +31,6 @@ search-movies .error {
 
 	search-movies .error {
 		font-size: 0.6em;
-		margin-bottom: 30vh;
+		margin: 20px 15px 40vh;
 	}
 }

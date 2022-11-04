@@ -10,6 +10,8 @@ up-coming h3 {
 up-coming .error {
 	color: white;
 	margin-bottom: 80vmin;
+	margin-left: 8%;
+	text-transform: capitalize;
 }
 
 @media screen and (max-width: 992px){
@@ -24,6 +26,7 @@ up-coming .error {
 
 	up-coming .error {
 		margin-bottom: 20px;
+		margin-left: 5%;
 	}
 }
 
@@ -36,6 +39,10 @@ up-coming .error {
 	up-coming h3 {
 		margin-top: 25px;
 		margin-left: 20px;
+	}
+
+	up-coming .error {
+		margin: 20px;
 	}
 }
 
@@ -51,5 +58,6 @@ up-coming .error {
 
 	up-coming .error {
 		font-size: 0.7em;
+		margin: 20px 15px;
 	}
 }

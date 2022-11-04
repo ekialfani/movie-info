@@ -96,23 +96,23 @@ class SearchBar extends HTMLElement {
         
         @media screen and (max-width: 576px){
           .search-bar {
-            width: 60%;
-            margin-left: 15px;
-            padding: 20px 0 15px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
           }
         
           input.search-input {
-            padding: 5px 4px 5px 25px;
-            font-size: 0.6em;
-            background-size: 8px;
-            background-position: 10px;
+            padding: 7px 4px 7px 35px;
+            font-size: 0.8em;
+            background-size: 12px;
+            background-position: 12px;
           }
         }
       </style>
 
       <div class="search-bar">
         <form>
-          <input class="search-input" type="search" placeholder="Search...">
+          <input class="search-input" type="text" placeholder="Search...">
         </form>
       </div>`);
 

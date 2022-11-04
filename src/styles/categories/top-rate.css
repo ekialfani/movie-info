@@ -7,6 +7,17 @@ top-rate h3 {
 	font-size: 1em;
 }
 
+top-rate .error {
+	color: white;
+	margin: 8%;
+}
+
+@media screen and (max-width: 992px){
+	top-rate .error {
+		margin: 5%;
+	}
+}
+
 @media screen and (max-width: 768px){
 	top-rate h3 {
 		margin-left: 20px;
@@ -15,6 +26,10 @@ top-rate h3 {
 	top-rate .cards {
 		width: 100vw;
 		padding: 0 20px;
+	}
+
+	top-rate .error {
+		margin: 20px;
 	}
 }
 
@@ -26,5 +41,9 @@ top-rate h3 {
 
 	top-rate .cards {
 		padding: 0 15px;
+	}
+
+	top-rate .error {
+		margin: 20px 15px;
 	}
 }

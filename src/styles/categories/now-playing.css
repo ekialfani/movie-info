@@ -10,6 +10,14 @@ now-playing h3 {
 
 now-playing .error {
 	color: white;
+	margin: 8%;
+	text-transform: capitalize;
+}
+
+@media screen and (max-width: 992px){
+	now-playing .error {
+		margin: 5%;
+	}
 }
 
 @media screen and (max-width: 768px){
@@ -21,16 +29,23 @@ now-playing .error {
 		width: 100vw;
 		padding: 0 20px;
 	}
+
+	now-playing .error {
+		margin: 20px;
+	}
 }
 
 @media screen and (max-width: 576px){
 	now-playing h3 {
 		font-size: 0.8em;
 		margin-top: 0;
-		margin-left: 15px;
 	}
 
 	now-playing .cards {
 		padding: 0 15px;
+	}
+
+	now-playing .error {
+		margin: 20px 15px;
 	}
 }

@@ -25,7 +25,7 @@ main {
 aside {
 	display: grid;
 	grid-template-rows: max-content 1fr;
-	
+
 }
 
 #content {
@@ -83,6 +83,8 @@ aside {
 
 @media screen and (max-width: 576px){
 	header {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: max-content 85%;
+		justify-content: space-between;
+		padding: 0 15px;
 	}
 }

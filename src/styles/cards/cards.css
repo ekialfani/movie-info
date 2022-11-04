@@ -421,15 +421,15 @@ card-item .card-info {
 
 	.small-cards .card-list,
 	.sidebar-cards .card-list {
-		grid-template-columns: repeat(3, 100px);
-		grid-template-rows: 120px;
-		grid-auto-columns: 100px;
+		grid-template-columns: repeat(3, 120px);
+		grid-template-rows: 140px;
+		grid-auto-columns: 120px;
 	}
 
 	.big-cards .card-list {
-		grid-template-columns: repeat(2, 215px);
-		grid-template-rows: 115px;
-		grid-auto-columns: 215px;
+		grid-template-columns: repeat(2, 220px);
+		grid-template-rows: 130px;
+		grid-auto-columns: 220px;
 	}
 
 	.small-cards .card-info,
