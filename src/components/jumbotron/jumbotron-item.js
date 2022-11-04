@@ -2,7 +2,7 @@
 /* eslint-disable camelcase */
 import '../../styles/jumbotron/jumbotron-item.css';
 import '../features/movie-details.js';
-import DataSource from '../../data/data-source.js';
+import {DataSource} from '../../data/data-source.js';
 
 // eslint-disable-next-line require-jsdoc
 class JumbotronItem extends HTMLElement {

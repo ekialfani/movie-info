@@ -1,6 +1,6 @@
 import '../../styles/categories/up-coming.css';
 import '../cards/movie-cards.js';
-import DataSource from '../../data/data-source.js';
+import {DataSource} from '../../data/data-source.js';
 
 class UpComing extends HTMLElement {
   async connectedCallback() {

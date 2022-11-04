@@ -1,5 +1,5 @@
 import '../../styles/categories/now-playing.css';
-import DataSource from '../../data/data-source.js';
+import {DataSource} from '../../data/data-source.js';
 
 class NowPlaying extends HTMLElement {
   async connectedCallback() {

@@ -1,6 +1,6 @@
 import '../../styles/categories/top-rate.css';
 import '../cards/movie-cards.js';
-import DataSource from '../../data/data-source.js';
+import {DataSource} from '../../data/data-source.js';
 
 
 class TopRate extends HTMLElement {

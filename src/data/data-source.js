@@ -1,56 +1,64 @@
-export default class DataSource {
+import axios from 'axios';
+// eslint-disable-next-line require-jsdoc
+export class DataSource {
+  // eslint-disable-next-line require-jsdoc
   static searchMovies(keyword) {
-    return fetch(`https://api.themoviedb.org/3/search/movie?api_key=375ce906f49de003c1a2474b933cbca4&language=en-US&query=${keyword}&page=1&include_adult=false`)
+    return axios.get(`https://api.themoviedb.org/3/search/movie?api_key=375ce906f49de003c1a2474b933cbca4&language=en-US&query=${keyword}&page=1&include_adult=false`)
         .then((response) => {
-          if (!response.ok) {
-            return Promise.reject('Error: something went wrong!');
+          const result = response.data.results;
+          if(result.length === 0){
+            return Promise.reject('movie not found...');
           }
 
-          return response.json();
+          return result;
         })
-        .then((response) => {
-          if (response.results.length === 0) {
-            return Promise.reject('Movie Not Found!');
+        .catch((error) => {
+          if (error.response) {
+            return Promise.reject('something went wrong...');
+          } else if (error.request) {
+            return Promise.reject('network error...');
+          } else {
+            return Promise.reject(error);
           }
+        })
+  }
 
-          return response.results;
+  // eslint-disable-next-line require-jsdoc
+  static getTrendingMovies() {
+    return axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=375ce906f49de003c1a2474b933cbca4`)
+        .then((response) => response.data.results)
+        .catch((error) => {
+          if(error.response){
+            return Promise.reject('something went wrong...');
+          }else {
+            return Promise.reject('network error...');
+          }
         });
   }
 
-  static getTrendingMovies() {
-    return fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=375ce906f49de003c1a2474b933cbca4`)
-        .then((response) => {
-          if (!response.ok) {
-            return Promise.reject('Error: something went wrong!');
-          }
-
-          return response.json();
-        })
-        .then((response) => response.results);
-  }
-
+  // eslint-disable-next-line require-jsdoc
   static getMovieByCategories(category) {
-    return fetch(`https://api.themoviedb.org/3/movie/${category}?api_key=375ce906f49de003c1a2474b933cbca4&language=en-US&page=1&region=US`)
-        .then((response) => {
-          if (!response.ok) {
-            return Promise.reject('error: something went wrong!');
+    return axios.get(`https://api.themoviedb.org/3/movie/${category}?api_key=375ce906f49de003c1a2474b933cbca4&language=en-US&page=1&region=US`)
+        .then((response) => response.data.results)
+        .catch((error) => {
+          if(error.response){
+            return Promise.reject('something went wrong...');
+          }else {
+            return Promise.reject('network error...');
           }
-
-          return response.json();
         })
-        .then((response) => response.results);
   }
 
+  // eslint-disable-next-line require-jsdoc
   static getDetails(movieId) {
-    return fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=375ce906f49de003c1a2474b933cbca4&language=en-US`)
-        .then((response) => {
-          if (!response.ok) {
-            return Promise.reject('error: something went wrong!');
+    return axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=375ce906f49de003c1a2474b933cbca4&language=en-US`)
+        .then((response) => response.data)
+        .catch((error) => {
+          if(error.response){
+            return Promise.reject('something went wrong...');
+          }else {
+            return Promise.reject('network error...');
           }
-
-          return response.json();
         })
-        .then((response) => response);
   }
 }
-

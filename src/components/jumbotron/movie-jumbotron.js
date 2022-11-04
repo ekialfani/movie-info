@@ -1,7 +1,7 @@
 /* eslint-disable valid-jsdoc */
 import '../../styles/jumbotron/movie-jumbotron.css';
 import './jumbotron-item.js';
-import DataSource from '../../data/data-source.js';
+import {DataSource} from '../../data/data-source.js';
 
 // eslint-disable-next-line require-jsdoc
 class MovieJumbotron extends HTMLElement {

@@ -1,5 +1,5 @@
 import '../features/movie-details.js';
-import DataSource from '../../data/data-source.js';
+import {DataSource} from '../../data/data-source.js';
 
 class CardItem extends HTMLElement {
   set movie(movie) {
