@@ -1,33 +1,55 @@
+/* eslint-disable valid-jsdoc */
 import '../../styles/jumbotron/movie-jumbotron.css';
 import './jumbotron-item.js';
 import DataSource from '../../data/data-source.js';
 
+// eslint-disable-next-line require-jsdoc
 class MovieJumbotron extends HTMLElement {
+  // eslint-disable-next-line require-jsdoc
   async connectedCallback() {
-    const result = await DataSource.getTrendingMovies();
-    this.render(result);
+    const movies = await DataSource.getTrendingMovies();
+    this.render(movies);
 
-    this.interval = setInterval(() => this.nextScroll(), 3000);
+    this.setScrollCard(3000, 0);
   }
 
-  set newInterval(number){
-    this.interval = setInterval(() => this.nextScroll(), number); 
+  // eslint-disable-next-line require-jsdoc
+  /**
+   * // eslint-disable-next-line valid-jsdoc
+   * @param {number | undefined} number
+   * @param {any} interval
+   */
+  set newInterval(interval) {
+    this.setScrollCard(interval, this.lastIndex);
   }
 
+  setScrollCard = (value, index) => {
+    this.interval = setInterval(() => {
+      if (index === this.children.length - 1) index = 0;
+      this.nextScroll(index);
+      this.lastIndex = index;
+      index++;
+    }, value);
+  };
+
+  // eslint-disable-next-line require-jsdoc
   disconnectedCallback() {
     clearInterval(this.interval);
   }
 
-  nextScroll() {
-    if (this.scrollLeft >= (this.scrollWidth - this.children[0].scrollWidth)) {
+  // eslint-disable-next-line require-jsdoc
+  nextScroll(index) {
+    // eslint-disable-next-line max-len
+    if (this.scrollLeft >= (this.scrollWidth - this.children[index].offsetWidth)) {
       return this.scrollLeft -= this.scrollWidth;
     }
 
-    this.scrollLeft += this.children[0].scrollWidth + 1;
+    this.scrollLeft += this.children[index].offsetWidth;
   }
 
-  render(movieData) {
-    movieData.forEach((movie) => {
+  // eslint-disable-next-line require-jsdoc
+  render(movies) {
+    movies.forEach((movie) => {
       const JumbotronItem = document.createElement('jumbotron-item');
       JumbotronItem.movie = movie;
 

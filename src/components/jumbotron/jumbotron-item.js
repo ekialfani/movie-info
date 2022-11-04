@@ -1,39 +1,58 @@
+/* eslint-disable no-tabs */
+/* eslint-disable camelcase */
 import '../../styles/jumbotron/jumbotron-item.css';
 import '../features/movie-details.js';
 import DataSource from '../../data/data-source.js';
 
+// eslint-disable-next-line require-jsdoc
 class JumbotronItem extends HTMLElement {
+  /**
+   * @param {{ id: string; }} movie
+   */
   set movie(movie) {
     this._movie = movie;
     this.id = movie.id;
     this.render();
   }
 
+  /**
+   * @param {any} event
+   */
   set clickEvent(event) {
     this._event = event;
     this.render();
   }
 
-  getMovieDetails = async () => {
+  _getMovieDetails = async () => {
     const movieDetails = document.querySelector('movie-details');
 
     try {
-      const result = await DataSource.getDetails(this.id);
-      movieDetails.movie = result;
+      const movie = await DataSource.getDetails(this.id);
+      movieDetails.movie = movie;
       movieDetails.classList.add('show-details');
       clearInterval(this.parentElement.interval);
       document.body.style.overflow = 'hidden';
-
-    }catch(error) {
+    } catch (error) {
       movieDetails.errorMessage = error;
     }
+  };
+  // eslint-disable-next-line require-jsdoc
+  get getMovieDetails() {
+    return this._getMovieDetails;
+  }
+  // eslint-disable-next-line require-jsdoc
+  set getMovieDetails(value) {
+    this._getMovieDetails = value;
   }
 
-  dateConvert(date){
+  // eslint-disable-next-line require-jsdoc
+  dateConvert(date) {
     return new Date(date).getFullYear();
   }
 
+  // eslint-disable-next-line require-jsdoc
   render() {
+    // eslint-disable-next-line camelcase
     const {title, backdrop_path, release_date, vote_average} = this._movie;
 
     this.innerHTML = (`
@@ -63,6 +82,7 @@ class JumbotronItem extends HTMLElement {
       this.querySelector('.rating').append(starIcon);
     }
 
+    // eslint-disable-next-line max-len
     this.querySelector('.detail-button').addEventListener('click', this.getMovieDetails);
   }
 }
