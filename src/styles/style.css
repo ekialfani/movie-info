@@ -25,7 +25,7 @@ main {
 aside {
 	display: grid;
 	grid-template-rows: max-content 1fr;
-	justify-items: space-between;
+	
 }
 
 #content {
@@ -55,36 +55,6 @@ aside {
   border-radius: 10px;
 }
 
-.credits {
-	padding: 8%;
-	/*border-top: 1px solid #333;*/
-	background-color: #27272a;
-	margin-bottom: -20px;
-}
-
-.credits a {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 20px;
-}
-
-.credits img {
-	width: 150px;
-}
-
-.credits h4 {
-	font-weight: 500;
-	letter-spacing: 1px;
-	margin-bottom: 30px;
-	color: #fafafa;
-	text-transform: capitalize;
-}
-
-.credits figcaption {
-	text-align: center;
-	color: #888;
-	font-size: .9em;
-}
 
 @media screen and (max-width: 992px){
 	header {
@@ -108,24 +78,6 @@ aside {
 
 	#content {
 		padding: 0;
-	}
-
-	.credits {
-		padding: 30px 20px;
-		text-align: center;
-	}
-
-	.credits h4 {
-		margin-bottom: 20px;
-		font-size: 0.8em;
-	}
-
-	.credits img {
-		width: 100px;
-	}
-
-	.credits figcaption {
-		font-size: 0.7em;
 	}
 }
 
