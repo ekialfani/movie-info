@@ -1,13 +1,19 @@
+/* eslint-disable no-tabs */
 import '../features/movie-details.js';
 import {DataSource} from '../../data/data-source.js';
 
+// eslint-disable-next-line require-jsdoc
 class CardItem extends HTMLElement {
+  /**
+   * @param {{ id: string; }} movie
+   */
   set movie(movie) {
     this.id = movie.id;
     this._movie = movie;
     this.render();
   }
 
+  // eslint-disable-next-line require-jsdoc
   activeCard() {
     const cardActives = document.querySelectorAll('card-item span');
 
@@ -16,13 +22,14 @@ class CardItem extends HTMLElement {
     this.querySelector('span').classList.add('active');
   }
 
+  // eslint-disable-next-line require-jsdoc
   async showMovieDetails() {
     const movieDetails = document.querySelector('movie-details');
 
     try {
-      const result = await DataSource.getDetails(this.id);
+      const movie = await DataSource.getDetails(this.id);
 
-      movieDetails.movie = result;
+      movieDetails.movie = movie;
     } catch (error) {
       movieDetails.errorMessage = error;
     }
@@ -36,13 +43,18 @@ class CardItem extends HTMLElement {
     this.activeCard();
   }
 
+  // eslint-disable-next-line require-jsdoc
   dateConvert(date) {
     return new Date(date).getFullYear();
   }
 
+  // eslint-disable-next-line require-jsdoc
   render() {
+    // eslint-disable-next-line camelcase
     const {backdrop_path, title, release_date, vote_average} = this._movie;
+    // eslint-disable-next-line camelcase
     const default_path = 'wwemzKWzjKYJFfCeiB57q3r4Bcm.png';
+    // eslint-disable-next-line camelcase
     const path = (backdrop_path === null) ? default_path : backdrop_path;
 
     this.innerHTML = (`
@@ -57,6 +69,7 @@ class CardItem extends HTMLElement {
 			</div>
 		`);
 
+    // eslint-disable-next-line camelcase
     const rating = Math.round(vote_average / 2);
 
     for (let i = 1; i <= 5; i++) {

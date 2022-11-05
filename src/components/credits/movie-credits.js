@@ -1,15 +1,21 @@
+/* eslint-disable max-len */
+/* eslint-disable no-tabs */
+// eslint-disable-next-line require-jsdoc
 class MovieCredits extends HTMLElement {
-	constructor() {
-		super();
-		this.shadowDOM = this.attachShadow({mode: 'open'});
-	}
+  // eslint-disable-next-line require-jsdoc, no-tabs
+  constructor() {
+    super();
+    this.shadowDOM = this.attachShadow({mode: 'open'});
+  }
 
-	connectedCallback() {
-		this.render();
-	}
+  // eslint-disable-next-line require-jsdoc
+  connectedCallback() {
+    this.render();
+  }
 
-	render() {
-		this.shadowDOM.innerHTML = (`
+  // eslint-disable-next-line require-jsdoc
+  render() {
+    this.shadowDOM.innerHTML = (`
 			<style>
 				* {
 					margin: 0;
@@ -45,7 +51,7 @@ class MovieCredits extends HTMLElement {
 
 				.credits figcaption {
 					text-align: center;
-					color: #888;
+					color: #a1a1aa;
 					font-size: .9em;
 				}
 
@@ -84,8 +90,8 @@ class MovieCredits extends HTMLElement {
 					<figcaption>This product uses the TMDB API but is not endorsed or certified by TMDB.</figcaption>
 				</figure>
 			</div>
-		`)
-	}
+		`);
+  }
 }
 
 customElements.define('movie-credits', MovieCredits);

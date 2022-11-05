@@ -9,7 +9,7 @@ now-playing h3 {
 }
 
 now-playing .error {
-	color: white;
+	color: #a1a1aa;
 	text-transform: capitalize;
 }
 

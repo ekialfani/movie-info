@@ -1,15 +1,27 @@
+/* eslint-disable max-len */
+/* eslint-disable no-tabs */
 import '../../styles/features/movie-details.css';
 
+// eslint-disable-next-line require-jsdoc
 class MovieDetails extends HTMLElement {
+  // eslint-disable-next-line require-jsdoc
+  /**
+   * @param {any} movie
+   */
   set movie(movie) {
     this._movie = movie;
     this.render();
   }
 
+  // eslint-disable-next-line require-jsdoc
+  /**
+   * @param {any} message
+   */
   set errorMessage(message) {
     this.error(message);
   }
 
+  // eslint-disable-next-line require-jsdoc
   timeConvert(runtime) {
     const hours = Math.floor(runtime / 60);
     const minutes = runtime % 60;
@@ -17,10 +29,12 @@ class MovieDetails extends HTMLElement {
     return `${hours}h ${minutes}min.`;
   }
 
+  // eslint-disable-next-line require-jsdoc
   dateConvert(date) {
     return new Date(date).getFullYear();
   }
 
+  // eslint-disable-next-line require-jsdoc
   error(message) {
     this.innerHTML = (`
       <div class="details-card show-card">
@@ -36,6 +50,7 @@ class MovieDetails extends HTMLElement {
   }
 
   closeCard = () => {
+    // eslint-disable-next-line max-len
     this.querySelector('.details-card').classList.replace('show-card', 'hide-card');
 
     const jumbotron = document.querySelector('movie-jumbotron');
@@ -47,9 +62,13 @@ class MovieDetails extends HTMLElement {
     }, 200);
   };
 
+  // eslint-disable-next-line require-jsdoc
   render() {
+    // eslint-disable-next-line max-len, camelcase
     const {title, release_date, genres, runtime, overview, backdrop_path, vote_average} = this._movie;
+    // eslint-disable-next-line camelcase
     const default_path = 'wwemzKWzjKYJFfCeiB57q3r4Bcm.png';
+    // eslint-disable-next-line camelcase
     const path = (backdrop_path === null) ? default_path : backdrop_path;
 
     this.innerHTML = (`
@@ -78,6 +97,7 @@ class MovieDetails extends HTMLElement {
         	</div>
         `);
 
+    // eslint-disable-next-line camelcase
     const rating = Math.round(vote_average / 2);
 
     for (let i = 1; i <= 5; i++) {

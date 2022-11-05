@@ -111,7 +111,7 @@ class SearchBar extends HTMLElement {
       </style>
 
       <div class="search-bar">
-        <form>
+        <form onSubmit="return false;">
           <input class="search-input" type="text" placeholder="Search...">
         </form>
       </div>`);

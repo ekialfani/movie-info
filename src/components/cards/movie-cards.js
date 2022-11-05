@@ -1,14 +1,16 @@
+/* eslint-disable no-tabs */
 import '../../styles/cards/cards.css';
 import './card-item.js';
 
+// eslint-disable-next-line require-jsdoc
 class MovieCards extends HTMLElement {
+  // eslint-disable-next-line require-jsdoc
+  /**
+   * @param {any} movies
+   */
   set movies(movies) {
     this._movies = movies;
     this.render();
-  }
-
-  set className(name) {
-    this.classList.add(name);
   }
 
   nextEvent = () => {
@@ -30,6 +32,7 @@ class MovieCards extends HTMLElement {
     }
   };
 
+  // eslint-disable-next-line require-jsdoc
   render() {
     this.innerHTML = (`
 			<div>
@@ -51,7 +54,9 @@ class MovieCards extends HTMLElement {
       this.querySelector('.card-list').append(cardItem);
     });
 
+    // eslint-disable-next-line max-len
     this.querySelector('.next-button').addEventListener('click', this.nextEvent);
+    // eslint-disable-next-line max-len
     this.querySelector('.prev-button').addEventListener('click', this.prevEvent);
   }
 }

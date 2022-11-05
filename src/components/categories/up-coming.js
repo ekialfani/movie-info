@@ -1,17 +1,21 @@
+/* eslint-disable no-tabs */
 import '../../styles/categories/up-coming.css';
 import '../cards/movie-cards.js';
 import {DataSource} from '../../data/data-source.js';
 
+// eslint-disable-next-line require-jsdoc
 class UpComing extends HTMLElement {
+  // eslint-disable-next-line require-jsdoc
   async connectedCallback() {
     try {
-      const result = await DataSource.getMovieByCategories('upcoming');
-      this.render(result);
+      const movies = await DataSource.getMovieByCategories('upcoming');
+      this.render(movies);
     } catch (error) {
       this.error(error);
     }
   }
 
+  // eslint-disable-next-line require-jsdoc
   error(message) {
     this.innerHTML = (`
       <div>
@@ -21,7 +25,8 @@ class UpComing extends HTMLElement {
     `);
   }
 
-  render(movieData) {
+  // eslint-disable-next-line require-jsdoc
+  render(movies) {
     this.innerHTML = (`
 			<div class="upcoming">
 				<h3>up coming</h3>
@@ -30,11 +35,9 @@ class UpComing extends HTMLElement {
 		`);
 
     const movieCards = document.createElement('movie-cards');
-    movieCards.className = 'sidebar-cards';
-    movieCards.movies = movieData;
+    movieCards.classList.add('sidebar-cards');
+    movieCards.movies = movies;
 
-    console.log(window.pageYOffset);
-    
     this.querySelector('.cards').append(movieCards);
   }
 }

@@ -1,28 +1,33 @@
+/* eslint-disable no-tabs */
 import '../../styles/categories/top-rate.css';
 import '../cards/movie-cards.js';
 import {DataSource} from '../../data/data-source.js';
 
 
+// eslint-disable-next-line require-jsdoc
 class TopRate extends HTMLElement {
+  // eslint-disable-next-line require-jsdoc
   async connectedCallback() {
     try {
-      const result = await DataSource.getMovieByCategories('top_rated');
-      this.render(result);
+      const movies = await DataSource.getMovieByCategories('top_rated');
+      this.render(movies);
     } catch (error) {
       this.error(error);
     }
   }
 
-  error(message){
+  // eslint-disable-next-line require-jsdoc
+  error(message) {
     this.innerHTML = (`
       <div>
         <h3>top rate</h3>
         <p class="error">${message}</p>
       </div>
-    `)
+    `);
   }
 
-  render(movieData) {
+  // eslint-disable-next-line require-jsdoc
+  render(movies) {
     this.innerHTML = (`
 			<div>
 				<h3>top rate</h3>
@@ -31,8 +36,8 @@ class TopRate extends HTMLElement {
 		`);
 
     const movieCards = document.createElement('movie-cards');
-    movieCards.className = 'big-cards';
-    movieCards.movies = movieData;
+    movieCards.classList.add('big-cards');
+    movieCards.movies = movies;
 
     this.querySelector('.cards').append(movieCards);
   }

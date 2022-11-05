@@ -9,14 +9,13 @@ const updateUpcomingStyle = (cardHeight, visibVal) => {
   const sidebarCards = document.querySelector('.sidebar-cards div');
   const upcoming = document.querySelector('up-coming');
 
-  if(window.screen.width > 992){
+  if (window.screen.width > 992) {
     sidebarCards.style.height = cardHeight;
-  }else {
+  } else {
     sidebarCards.style.height = 'max-content';
     upcoming.style.visibility = visibVal;
   }
-
-}
+};
 
 const renderCategories = () => {
   const movieList = document.querySelector('.movie-list');
@@ -45,7 +44,6 @@ const renderFallbackResult = (message) => {
   movieList.append(searchMovies);
 };
 
-
 const main = () => {
   const searchBar = document.querySelector('search-bar');
 
@@ -59,16 +57,15 @@ const main = () => {
       return input;
     }).join('');
 
-    if(!keyword.length){
+    if (!keyword.length) {
       updateUpcomingStyle('70vmin', 'visible');
-        renderCategories();
-    }else {
+      renderCategories();
+    } else {
       try {
         const result = await DataSource.searchMovies(keyword);
 
         renderSearchResult(result);
         updateUpcomingStyle('80vmax', 'hidden');
-      
       } catch (error) {
         renderFallbackResult(error);
         updateUpcomingStyle('70vmin', 'hidden');

@@ -1,16 +1,20 @@
+/* eslint-disable no-tabs */
 import '../../styles/categories/now-playing.css';
 import {DataSource} from '../../data/data-source.js';
 
+// eslint-disable-next-line require-jsdoc
 class NowPlaying extends HTMLElement {
+  // eslint-disable-next-line require-jsdoc
   async connectedCallback() {
     try {
-      const result = await DataSource.getMovieByCategories('now_playing');
-      this.render(result);
+      const movies = await DataSource.getMovieByCategories('now_playing');
+      this.render(movies);
     } catch (error) {
       this.error(error);
     }
   }
 
+  // eslint-disable-next-line require-jsdoc
   error(message) {
     this.innerHTML = (`
       <div>
@@ -20,7 +24,8 @@ class NowPlaying extends HTMLElement {
       `);
   }
 
-  render(movieData) {
+  // eslint-disable-next-line require-jsdoc
+  render(movies) {
     this.innerHTML = (`
 			<div>
 				<h3>now playing</h3>
@@ -29,8 +34,8 @@ class NowPlaying extends HTMLElement {
 		`);
 
     const movieCards = document.createElement('movie-cards');
-    movieCards.className = 'small-cards';
-    movieCards.movies = movieData;
+    movieCards.classList.add('small-cards');
+    movieCards.movies = movies;
 
     this.querySelector('.cards').append(movieCards);
   }

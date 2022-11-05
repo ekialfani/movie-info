@@ -41,7 +41,7 @@ class MovieJumbotron extends HTMLElement {
   nextScroll(index) {
     // eslint-disable-next-line max-len
     if (this.scrollLeft >= (this.scrollWidth - this.children[index].offsetWidth)) {
-      return this.scrollLeft -= this.scrollWidth;
+      return this.scrollLeft -= this.scrollWidth + 1;
     }
 
     this.scrollLeft += this.children[index].offsetWidth;
