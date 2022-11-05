@@ -49,10 +49,15 @@ class MovieCredits extends HTMLElement {
 					font-size: .9em;
 				}
 
+				@media screen and (max-width: 992px){
+					.credits {
+						text-align: center;
+					}
+				}
+
 				@media screen and (max-width: 768px){
 					.credits {
 						padding: 30px 20px;
-						text-align: center;
 					}
 
 					.credits h4 {

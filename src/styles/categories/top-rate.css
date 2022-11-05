@@ -8,14 +8,7 @@ top-rate h3 {
 }
 
 top-rate .error {
-	color: white;
-	margin: 8%;
-}
-
-@media screen and (max-width: 992px){
-	top-rate .error {
-		margin: 5%;
-	}
+	color: #a1a1aa;
 }
 
 @media screen and (max-width: 768px){

@@ -8,7 +8,7 @@ up-coming h3 {
 }
 
 up-coming .error {
-	color: white;
+	color: #a1a1aa;
 	margin-bottom: 80vmin;
 	margin-left: 8%;
 	text-transform: capitalize;

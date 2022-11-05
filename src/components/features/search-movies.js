@@ -15,6 +15,7 @@ class SearchMovies extends HTMLElement {
   error() {
     this.innerHTML = (`
       <div>
+        <h3>search result</h3>
         <p class="error">${this._message}</p>
       </div>
     `);

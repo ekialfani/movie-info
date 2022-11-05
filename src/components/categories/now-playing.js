@@ -12,7 +12,12 @@ class NowPlaying extends HTMLElement {
   }
 
   error(message) {
-    this.innerHTML = `<p class="error">${message}</p>`;
+    this.innerHTML = (`
+      <div>
+        <h3>now playing</h3>
+        <p class="error">${message}</p>
+      </div>
+      `);
   }
 
   render(movieData) {

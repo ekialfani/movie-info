@@ -15,6 +15,7 @@ class UpComing extends HTMLElement {
   error(message) {
     this.innerHTML = (`
       <div>
+        <h3>up coming</h3>
         <p class="error">${message}</p>
       </div>
     `);

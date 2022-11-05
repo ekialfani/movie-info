@@ -63,6 +63,18 @@ movie-details {
 	line-height: 2.5;
 }
 
+.details-card .error {
+	padding-top: 50px;
+	display: flex;
+	justify-content: center;
+	color: #a1a1aa;
+}
+
+.details-card .error p {
+	text-transform: capitalize;
+	margin-left: 10px;
+}
+
 .details-card .hero {
 	position: relative;
 	max-height: 300px;

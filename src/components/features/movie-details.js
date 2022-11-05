@@ -22,7 +22,17 @@ class MovieDetails extends HTMLElement {
   }
 
   error(message) {
-    this.innerHTML = `<div class="details-card"><p>${message}</p></div>`;
+    this.innerHTML = (`
+      <div class="details-card show-card">
+        <div class="error">
+          <i class="bi bi-wifi-off"></i>
+          <p>${message}</p>  
+        </div>
+        <button class="close"><i class="bi bi-x"></i></button>
+      </div>
+      `);
+
+    this.querySelector('.close').addEventListener('click', this.closeCard);
   }
 
   closeCard = () => {

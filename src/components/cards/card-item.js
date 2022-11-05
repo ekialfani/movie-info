@@ -23,11 +23,11 @@ class CardItem extends HTMLElement {
       const result = await DataSource.getDetails(this.id);
 
       movieDetails.movie = result;
-      movieDetails.classList.add('show-details');
-
     } catch (error) {
       movieDetails.errorMessage = error;
     }
+
+    movieDetails.classList.add('show-details');
 
     document.body.style.overflow = 'hidden';
     const movieJumbotron = document.querySelector('movie-jumbotron');

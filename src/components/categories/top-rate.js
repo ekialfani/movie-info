@@ -16,6 +16,7 @@ class TopRate extends HTMLElement {
   error(message){
     this.innerHTML = (`
       <div>
+        <h3>top rate</h3>
         <p class="error">${message}</p>
       </div>
     `)

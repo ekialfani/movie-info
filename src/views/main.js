@@ -5,15 +5,15 @@ import '../components/features/search-movies.js';
 import {DataSource} from '../data/data-source.js';
 
 
-const updateUpcomingStyle = (height, display) => {
+const updateUpcomingStyle = (cardHeight, visibVal) => {
   const sidebarCards = document.querySelector('.sidebar-cards div');
   const upcoming = document.querySelector('up-coming');
 
   if(window.screen.width > 992){
-    sidebarCards.style.height = height;
+    sidebarCards.style.height = cardHeight;
   }else {
     sidebarCards.style.height = 'max-content';
-    upcoming.style.display = display;
+    upcoming.style.visibility = visibVal;
   }
 
 }
@@ -59,19 +59,19 @@ const main = () => {
       return input;
     }).join('');
 
-    if(keyword.length === 0){
-      updateUpcomingStyle('70vmin', 'inline-block');
+    if(!keyword.length){
+      updateUpcomingStyle('70vmin', 'visible');
         renderCategories();
     }else {
       try {
         const result = await DataSource.searchMovies(keyword);
 
         renderSearchResult(result);
-        updateUpcomingStyle('80vmax', 'none');
+        updateUpcomingStyle('80vmax', 'hidden');
       
       } catch (error) {
         renderFallbackResult(error);
-        updateUpcomingStyle('70vmin', 'none');
+        updateUpcomingStyle('70vmin', 'hidden');
       }
     }
   };

@@ -8,29 +8,36 @@ search-movies h3 {
 }
 
 search-movies .error {
-	color: white;
-	margin: 8%;
+	color: #a1a1aa;
 	text-transform: capitalize;
 }
 
-@media screen and (max-width: 992px){
+@media screen and(max-width: 992px){
 	search-movies .error {
-		margin: 5%;
+		margin: 20px 0;
 	}
 }
 
 @media screen and (max-width: 768px){
 	search-movies h3 {
-		font-size: 0.8em;
 		margin-top: 0;
 	}
 
 	search-movies > div {
 		padding: 0 20px 20px;
 	}
+}
 
+@media screen and (max-width: 576px){
+	search-movies > div {
+		padding: 0 15px 15px;
+	}
+
+	search-movies h3 {
+		font-size: 0.8em;
+	}
+	
 	search-movies .error {
-		font-size: 0.6em;
-		margin: 20px 15px 40vh;
+		font-size: 0.8em;
 	}
 }
