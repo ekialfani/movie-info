@@ -1,0 +1,63 @@
+up-coming h3 {
+	margin-left: 8%;
+	margin-bottom: 15px;
+	color: white;
+	font-weight: 500;
+	font-size: 1em;
+	text-transform: capitalize;
+}
+
+up-coming .error {
+	color: #a1a1aa;
+	margin-bottom: 80vmin;
+	margin-left: 8%;
+	text-transform: capitalize;
+}
+
+@media screen and (max-width: 992px){
+	up-coming h3 {
+		margin-top: -20px;
+		margin-left: 5%;
+	}
+
+	up-coming .cards {
+		padding: 0 5%;
+	}
+
+	up-coming .error {
+		margin-bottom: 20px;
+		margin-left: 5%;
+	}
+}
+
+@media screen and (max-width: 768px){
+	up-coming .cards {
+		width: 100vw;
+		padding: 0 20px;
+	}
+
+	up-coming h3 {
+		margin-top: 25px;
+		margin-left: 20px;
+	}
+
+	up-coming .error {
+		margin: 20px;
+	}
+}
+
+@media screen and (max-width: 576px){
+	up-coming h3 {
+		font-size: 0.8em;
+		margin-left: 15px;
+	}
+
+	up-coming .cards {
+		padding: 0 15px;
+	}
+
+	up-coming .error {
+		font-size: 0.7em;
+		margin: 20px 15px;
+	}
+}

@@ -1,0 +1,44 @@
+now-playing h3 {
+	font-size: 1em;
+	letter-spacing: 1px;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	text-transform: capitalize;
+	color: white;
+	font-weight: 500;
+}
+
+now-playing .error {
+	color: #a1a1aa;
+	text-transform: capitalize;
+}
+
+@media screen and (max-width: 768px){
+	now-playing h3 {
+		margin-left: 20px;
+	}
+
+	now-playing .cards {
+		width: 100vw;
+		padding: 0 20px;
+	}
+
+	now-playing .error {
+		margin: 20px;
+	}
+}
+
+@media screen and (max-width: 576px){
+	now-playing h3 {
+		font-size: 0.8em;
+		margin-top: 0;
+	}
+
+	now-playing .cards {
+		padding: 0 15px;
+	}
+
+	now-playing .error {
+		margin: 20px 15px;
+	}
+}
