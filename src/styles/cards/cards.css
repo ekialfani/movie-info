@@ -87,12 +87,17 @@ movie-cards > div {
 
 .prev-button .bi,
 .next-button .bi {
-	font-size: 1.2em;
-	padding: 15px 20px;
+	width: 45px;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.6em;
 	background-color: #16a34a;
 	border-radius: 50px;
 	box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.2);
 	color: white;
+	border: 2px solid #ccc;
 }
 
 .prev-button {
@@ -239,11 +244,6 @@ card-item .card-info {
 }
 
 @media screen and (max-width: 1440px){
-	.prev-button .bi,
-	.next-button .bi {
-		padding: 12px 13px;
-	}
-
 	card-item .card-info {
 		line-height: 1.6;
 		padding: 20px;
@@ -303,7 +303,9 @@ card-item .card-info {
 
 	.prev-button .bi,
 	.next-button .bi {
-		font-size: 1em;
+		width: 40px;
+		height: 40px;
+		font-size: 1.4em;
 	}
 }
 
