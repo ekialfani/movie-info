@@ -34,7 +34,7 @@ movie-cards > div {
 }
 
 .sidebar-cards .card-list {
-	grid-template-rows: repeat(20, 260px);
+	grid-template-rows: repeat(20, 200px);
 	grid-row-gap: 30px;
 }
 
@@ -58,19 +58,19 @@ movie-cards > div {
 }
 
 .small-cards .card-list {
-	grid-template-columns: repeat(4, 23.8%);
-	grid-template-rows: 200px;
+	grid-template-columns: repeat(4, 25%);
+	grid-template-rows: 160px;
 	grid-auto-flow: column;
-	grid-auto-columns: 24%;
-	gap: 25px;
+	grid-auto-columns: 25%;
+	gap: 20px;
 }
 
 .big-cards .card-list {
 	grid-template-columns: repeat(3, 32.5%);
-	grid-template-rows: 240px;
+	grid-template-rows: 200px;
 	grid-auto-flow: column;
 	grid-auto-columns: 32.5%;
-	gap: 25px;
+	gap: 20px;
 }
 
 .prev-button,
@@ -196,30 +196,30 @@ card-item .card-info {
 }
 
 .small-cards .title {
-	font-size: 1.2em;
+	font-size: 1em;
 }
 
 .small-cards .release {
-	font-size: 1em;
+	font-size: 12px;
 }
 
 .small-cards .rating {
-	font-size: 1em;
+	font-size: 12px;
 }
 
 .big-cards .title,
 .sidebar-cards .title {
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 
 .big-cards .release,
 .sidebar-cards .release {
-	font-size: 1.2em;
+	font-size: 15px;
 }
 
 .big-cards .rating,
 .sidebar-cards .rating {
-	font-size: 1.2em;
+	font-size: 15px;
 }
 
 .search-cards .card-info {
