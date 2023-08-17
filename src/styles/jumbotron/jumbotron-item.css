@@ -42,27 +42,37 @@ jumbotron-item .info {
 }
 
 .info .release {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	letter-spacing: 1px;
 	color: #ddd;
 }
 
 .info .rating .bi {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	margin-right: 8px;
 	color: orange;
 }
 
 .detail-button {
 	margin-top: 20px;
-	font-size: 1.2em;
-	padding: 18px 30px;
+	padding: 12px 20px;
 	text-transform: capitalize;
 	font-weight: bold;	
 	border: none;
 	border-radius: 50px;
 	background-color: #16a34a;
 	color: white;
+	display: flex;
+	align-items: center;
+}
+
+.detail-button .bi {
+	font-size: 1.5em;
+	margin-right: 10px;
+}
+
+.detail-button span {
+	font-size: 1em;
 }
 
 .detail-button:hover {

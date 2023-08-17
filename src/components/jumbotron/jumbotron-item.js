@@ -62,7 +62,10 @@ class JumbotronItem extends HTMLElement {
 					<h2 class="title">${title}</h2>
 					<p class="release">(${this.dateConvert(release_date)})</p>
 						<div class="rating"></div>
-					<button type="submit" class="detail-button">show details</button>
+					<button type="submit" class="detail-button">
+            <i class="bi bi-info-circle-fill"></i>
+            <span>show details<span>
+          </button>
 				</div>
 			</div>
 		`);
